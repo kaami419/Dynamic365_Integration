@@ -18,9 +18,10 @@ export default function Home() {
       console.log("accounts", accounts);
       console.log("account.length", accounts.length);
       console.log("instance", instance);
+      const storedAccessToken = localStorage.getItem("accessToken");
       
       try {
-        if (accounts.length > 0) {
+        if (storedAccessToken && accounts.length > 0) {
           const response = await instance.acquireTokenSilent({
             scopes: [`https://${localStorage.getItem("dynamicsUrl") || "placeholder"}/.default`],
             account: accounts[0],

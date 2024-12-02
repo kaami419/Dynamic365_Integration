@@ -35,7 +35,7 @@ export default function SignInButton() {
       localStorage.setItem("userEmail", userEmail);
 
       alert("Login successful!");
-      router.push('/');
+      window.location.reload();
     } catch (error) {
       console.log("Login failed", error);
     }

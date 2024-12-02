@@ -6,6 +6,8 @@ import { msalConfig } from "@/app/authConfig";
 
 const msalInstance = new PublicClientApplication(msalConfig);
 
+await msalInstance.initialize();
+
 export default function MsalProviderWrapper({ children }) {
     return (
         <MsalProvider instance={msalInstance}>
